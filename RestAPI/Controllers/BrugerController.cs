@@ -10,7 +10,7 @@ namespace RestAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class BrugerController : ControllerBase
     {
 
         private static readonly string[] Summaries = new[]
@@ -18,21 +18,20 @@ namespace RestAPI.Controllers
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<BrugerController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public BrugerController(ILogger<BrugerController> logger)
         {
             _logger = logger;
         }
         
        
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet(Name = "GetBrugeres")]
         public string Get(string? table, int? id)
         {
             
             try
             {
-                int i = 0;
                 string sql;
                 //string[] a1 = new string[5];
                 ArrayList a1 = new ArrayList();
